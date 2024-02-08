@@ -125,6 +125,7 @@ int main() //funcão principal
 		printf("\t1-Incluir usuário\n");
 		printf("\t2-Pesquisar usuário\n");
 		printf("\t3-Deletar usuário\n\n\n");
+		printf("\t4-Sair do sistema\n\n");
 		printf("Opção desejada: ");
 		
 		scanf("%d", &opcao); // escaneia o valor que o usuário coloca (%d é para armazenar o valor de nº inteiro e o &opção é onde será armazenado)
@@ -143,6 +144,11 @@ int main() //funcão principal
 			
 			case 3:
 			deletar();
+			break;
+			
+			case 4:
+			printf("Obrigado por utilizar o sistema\n");
+			return 0;
 			break;
 			
 			default:
