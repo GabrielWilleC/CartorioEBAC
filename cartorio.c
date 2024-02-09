@@ -112,50 +112,64 @@ int main() //funcão principal
 {
 	int opcao=0; //variável para as opções do menu (1 "=" é para setar o valor da opção em zero, para que a opção não fique com valor variável de memória)
 	int laco=1; //variável para a repetição do menu após selecionar a opção desejada
+	char senhadigitada [10]="a";
+	int comparacao;
 	
-	for(laco=1;laco=1;) //repetição das opções do menu
+	printf("~~~ Cartório da EBAC ~~~\n");
+	printf("Login de administrador\nDigite a sua senha: ");
+	scanf("%s",senhadigitada);
+	
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0)
 	{
-		
-		system ("cls"); //system = "falar com o sistema operacional (não mostra os menus anteriores até o usuario terminar a opção atual)
-		
-		setlocale(LC_ALL, "Portuguese"); //setar a lingua portuguesa
-		
-		printf("~~~ Cartório da EBAC ~~~\n\n"); //printf = mostrar para o usuário o texto que está dentro das aspas
-		printf("Por favor, selecione uma das opções a seguir\n\n");
-		printf("\t1-Incluir usuário\n");
-		printf("\t2-Pesquisar usuário\n");
-		printf("\t3-Deletar usuário\n\n\n");
-		printf("\t4-Sair do sistema\n\n");
-		printf("Opção desejada: ");
-		
-		scanf("%d", &opcao); // escaneia o valor que o usuário coloca (%d é para armazenar o valor de nº inteiro e o &opção é onde será armazenado)
-		
-		system ("cls"); //system = "falar com o sistema operacional (não mostra os menus anteriores até o usuario terminar a opção atual)
-		
-		switch(opcao)
+		for(laco=1;laco=1;) //repetição das opções do menu
 		{
-			case 1:
-			incluir();
-			break;
+		
+			system ("cls"); //system = "falar com o sistema operacional (não mostra os menus anteriores até o usuario terminar a opção atual)
+		
+			setlocale(LC_ALL, "Portuguese"); //setar a lingua portuguesa
+		
+			printf("~~~ Cartório da EBAC ~~~\n\n"); //printf = mostrar para o usuário o texto que está dentro das aspas
+			printf("Por favor, selecione uma das opções a seguir\n\n");
+			printf("\t1-Incluir usuário\n");
+			printf("\t2-Pesquisar usuário\n");
+			printf("\t3-Deletar usuário\n\n\n");
+			printf("\t4-Sair do sistema\n\n");
+			printf("Opção desejada: ");
+		
+			scanf("%d", &opcao); // escaneia o valor que o usuário coloca (%d é para armazenar o valor de nº inteiro e o &opção é onde será armazenado)
+		
+			system ("cls"); //system = "falar com o sistema operacional (não mostra os menus anteriores até o usuario terminar a opção atual)
+		
+			switch(opcao)
+			{
+				case 1:
+				incluir();
+				break;
 			
-			case 2:
-			pesquisar();
-			break;
+				case 2:
+				pesquisar();
+				break;
 			
-			case 3:
-			deletar();
-			break;
+				case 3:
+				deletar();
+				break;
 			
-			case 4:
-			printf("Obrigado por utilizar o sistema\n");
-			return 0;
-			break;
+				case 4:
+				printf("Obrigado por utilizar o sistema\n");
+				return 0;
+				break;
 			
-			default:
-			printf("Esta opção não existe, por favor escolha uma opção válida\n");
-			system("pause");
-			break;
+				default:
+				printf("Esta opção não existe, por favor escolha uma opção válida\n");
+				system("pause");
+				break;
+			}
 		}
 	}
-
+	else
+	{
+		printf("Senha incorreta!");
+	}
 }
